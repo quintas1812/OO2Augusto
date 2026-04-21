@@ -1,4 +1,4 @@
-package oop2.ejercicios.filtros;
+package ejercicios.filtros;
 
 import java.util.ArrayList;
 import java.util.List;

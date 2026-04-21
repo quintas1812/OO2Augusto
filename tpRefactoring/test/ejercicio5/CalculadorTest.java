@@ -1,4 +1,4 @@
-package oop2.tp3.ejercicio5;
+package ejercicio5;
 
 import org.junit.jupiter.api.Test;
 

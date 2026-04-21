@@ -1,4 +1,4 @@
-package oop2.tp3.ejercicio1;
+package ejercicio1;
 
 public abstract class Libro {
   //  public static final int INFANTILES = 2;

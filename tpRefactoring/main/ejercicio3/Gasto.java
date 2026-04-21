@@ -1,4 +1,4 @@
-package oop2.tp3.ejercicio3;
+package ejercicio3;
 
 public class Gasto {
     TipoDeGasto tipoGasto;

@@ -1,4 +1,4 @@
-package oop2.ejercicios.jdbc;
+package ejercicios.jdbc;
 
 public class Main {
     public static void main(String[] args) {

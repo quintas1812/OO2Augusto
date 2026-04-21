@@ -1,4 +1,4 @@
-package oop2.tp3.ejercicio5;
+package ejercicio5;
 
 public class Drama extends Tipo {
     private final static int MONTO_INICIAL = 40000;

@@ -1,4 +1,4 @@
-package oop2.tp3.ejercicio6;
+package ejercicio6;
 
 public class MainCalculadoraPedido {
     public static void main(String[] args) {

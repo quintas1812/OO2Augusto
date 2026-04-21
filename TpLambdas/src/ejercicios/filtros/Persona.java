@@ -1,4 +1,4 @@
-package oop2.ejercicios.filtros;
+package ejercicios.filtros;
 
 public class Persona {
 

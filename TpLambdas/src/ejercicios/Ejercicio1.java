@@ -1,4 +1,4 @@
-package oop2.ejercicios;
+package ejercicios;
 
 interface A {
     void metodo();

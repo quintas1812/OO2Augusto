@@ -1,6 +1,6 @@
-package Main.ejercicio3;
+package Fronted.ejercicio3;
 
-import Persistence.ejercicio3.LectorFile;
+import Main.ejercicio3.RadioCompetition;import Persistence.ejercicio3.LectorFile;
 import Modelo.ejercicio3.Save;
 import Persistence.ejercicio3.SaveFile;
 

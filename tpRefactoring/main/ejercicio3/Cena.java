@@ -1,4 +1,4 @@
-package oop2.tp3.ejercicio3;
+package ejercicio3;
 
 public class Cena extends TipoDeGasto{
     public static final String CENA = "Cena";

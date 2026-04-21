@@ -1,4 +1,4 @@
-package oop2.tp3.ejercicio1;
+package ejercicio1;
 
 import java.util.ArrayList;
 import java.util.List;

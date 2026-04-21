@@ -1,4 +1,4 @@
-package oop2.ejercicios.jdbc;
+package ejercicios.jdbc;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
