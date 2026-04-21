@@ -1,0 +1,4 @@
+apellido, nombre, teléfono, email, idconcurso
+quintas, augusto, 2920-888844, augustoquintas, 47277888,
+tassara, lucio, 2920556655, lucioGey@com.ar, 1, 
+paredes, carina, 2920653366, carinaalej@gmail.com, 2, 

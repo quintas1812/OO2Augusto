@@ -1,0 +1,5 @@
+idconcurso, nombre, fechaInicioInscripcion, fechaFinInscripcion
+1, pulseada, 2020/06/01, 2027/07/01
+2, patitos, 2020/06/01, 2026/07/01
+3, concursox, 2000/06/01, 2027/07/01
+4, concursox2, 2026/06/01, 2026/07/01
