@@ -1,6 +1,7 @@
-package Persistence.ejercicio3;
+package Persistence.ejercicio2;
 
-import Modelo.ejercicio3.Lector;
+import Modelo.ejercicio2.Empleado;
+import Modelo.ejercicio2.Lector;
 import com.opencsv.CSVReader;
 
 import java.io.FileReader;
@@ -15,25 +16,23 @@ public class LectorFile implements Lector {
     public LectorFile(String pathfile) {
         this.pathfile = pathfile;
     }
-
-    public List<String> read() {
-        List<String> abiertos = new ArrayList<>();
+//Johnson, Brian, 1975/09/11, brian@acdc.com
+    public List<Empleado> read() {
+        List<Empleado> empleados = new ArrayList<>();
         try (CSVReader reader = new CSVReader(new FileReader(this.pathfile))) {
             String[] row;
-            LocalDate hoy = LocalDate.now();
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd");
             reader.readNext();// salto a la siguiente row
             while ((row = reader.readNext()) != null) {
-                String nombreConcurso = row[1];
-                LocalDate inicio = LocalDate.parse(row[2].trim(), formatter);
-                LocalDate fin = LocalDate.parse(row[3].trim(), formatter);
-                if (!hoy.isBefore(inicio) && !hoy.isAfter(fin)) {
-                    abiertos.add(nombreConcurso);
-                }
+                String nombre = row[1];
+                String apellido = row[2];
+                LocalDate fecha_nac = LocalDate.parse(row[3].trim(), formatter);
+                String email = row[4];
+                empleados.add(new Empleado(nombre, apellido, email, fecha_nac));
             }
         }catch (Exception e) {
             throw new RuntimeException("Error al leer el archivo CSV: " + e.getMessage(), e);
         }
-        return abiertos;
+        return empleados;
     }
 }

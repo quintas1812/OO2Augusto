@@ -11,26 +11,17 @@ public class TestGuardaParticipane {
 
     @Test
     public void testGuardarParticipante() throws Exception {
-        // Instanciamos el Fake del mismo paquete
         FakeGuardar fakeGuardar = new FakeGuardar();
-        
-        // Datos de prueba
         Participante participante = new Participante("Juan Perez", "1234-567890", "China");
-        
-        // Inyección de dependencia
         GuardaParticipante guardaParticipante = new GuardaParticipante(fakeGuardar);
         guardaParticipante.guardar(participante);
-        
-        // Verificación
         assertEquals(participante.Nombre(), fakeGuardar.nombre(), "El nombre guardado debe coincidir");
     }
-
     @Test
     public void testTelefonoInvalidoLanzaExcepcion() {
         Exception exception = assertThrows(Exception.class, () -> {
             new Participante("Juan", "123-456", "China");
         });
-        
         assertEquals("El teléfono debe ingresarse de la siguiente forma: NNNN-NNNNNN", exception.getMessage());
     }
 

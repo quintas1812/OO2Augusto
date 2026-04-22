@@ -8,7 +8,8 @@ public class Participante {
     private String telefono;
     private String email;
     public Participante(String nombre, String apellido, String email, String telefono)throws Exception {
-        validarNombreYApellido(nombre, apellido);
+        validarNombre(nombre);
+        validarApellido(apellido);
         if (!checkEmail(email)){
             new Exception("El email no es valido");
         }
@@ -28,12 +29,19 @@ public class Participante {
             return email.matches(regex);
         }
 
-    private void validarNombreYApellido(String nombre, String apellido){
-        if (nombre.isEmpty() || apellido.isEmpty()){
-            new RuntimeException("El nombre y el apellido no pueden estar vacios");
+
+    private void validarApellido( String apellido){
+        if (apellido.isBlank() || apellido==null){
+            new RuntimeException("El apellido no es valido");
+        }
+        this.apellido = apellido;
+    }
+
+    private void validarNombre(String nombre){
+        if (nombre.isBlank() || nombre==null){
+            new RuntimeException("El nombre no es valido");
         }
         this.nombre = nombre;
-        this.apellido = apellido;
     }
     protected String Apellido() {
     return this.apellido;

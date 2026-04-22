@@ -1,15 +1,12 @@
 package Persistence.ejercicio3;
 
+import Modelo.ejercicio2.Empleado;
 import Modelo.ejercicio3.Lector;
 import Modelo.ejercicio3.Save;
 
-import javax.xml.transform.Result;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-
-import static Persistence.ejercicio3.ConnectionManager.disconnect;
-import static Persistence.ejercicio3.ConnectionManager.getConnection;
 
 public class SaveBD implements Save, Lector {
     @Override

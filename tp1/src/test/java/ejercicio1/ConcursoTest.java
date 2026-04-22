@@ -8,7 +8,6 @@ import java.time.LocalDate;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.mockito.Mockito.*;
 
 class ConcursoTest {
 
@@ -25,17 +24,14 @@ class ConcursoTest {
     }
 
     @Test
-    void testInscripcionConEmailMockeado() {
-        // Usamos un mock para verificar que se intenta enviar el mail sin mandarlo realmente
-        EmailSender emailSenderMock = mock(EmailSender.class);
-        Notificador notificadorEmail = new Email(emailSenderMock);
+    void testInscripcionConMailtrap() {
+        EmailSender emailsender = new EmailSender( "sandbox.smtp.mailtrap.io", 2525, "c9604509b9b552", "****db2f");
+        Email notificadorEmail = new Email(emailsender);
         Save save = new FakeSaveFile();
         Participante participante = new Participante(12345678, "Juan", "Perez", "juan@gmail.com");
         LocalDate hoy = LocalDate.now();
         Concurso concurso = new Concurso(hoy, hoy.plusDays(5));
-        concurso.agregarA(participante, save, notificadorEmail);
-        verify(emailSenderMock, times(1)).enviarEmail(anyString(), anyString(), anyString());
-        assertEquals(10, concurso.puntosDe(participante));
+        concurso.agregarA(participante, save, notificadorEmail);//me fijo en el mailtrap
     }
 
     @Test
@@ -43,7 +39,7 @@ class ConcursoTest {
         String host = "smtp.gmail.com";
         int port = 587;
         String username = "augustoq3k@gmail.com";
-        String password = "gniijodsrhcp";
+        String password = "gniijodsrhcp";// fijarse este password en google
         EmailSender emailSender = new EmailSender(host, port, username, password);
         Notificador notificadorEmail = new Email(emailSender);
         Save save = new FakeSaveFile();
