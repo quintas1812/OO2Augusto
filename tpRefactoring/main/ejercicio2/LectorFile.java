@@ -1,4 +1,4 @@
-package ejercicio2;
+package main.ejercicio2;
 
 import com.opencsv.CSVReader;
 

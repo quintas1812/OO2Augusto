@@ -1,9 +1,7 @@
-package ejercicio1;
+package main.test.ejercicio1;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
-import java.util.ArrayList;
 
 public class CalcularPagoTest {
     @Test

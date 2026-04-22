@@ -1,4 +1,4 @@
-package ejercicio5;
+package main.ejercicio5;
 
 public abstract class Tipo {
     public abstract double calcularMonto(int cantEspectadores);

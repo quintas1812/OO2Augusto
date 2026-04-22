@@ -1,4 +1,4 @@
-package Tests.ejercicio2;
+package ejercicio2;
 
 import Modelo.ejercicio2.Empleado;
 import Modelo.ejercicio2.Saludar;
@@ -17,7 +17,7 @@ public class TestSaludar {
     @DisplayName("Validación de cantidad de notificaciones por cumpleaños, con un fake")
     @Test
     public void testCantidadNotificaciones(){
-        FakeNotificadoryLector notificador = new FakeNotificadoryLector();
+        Tests.ejercicio2.FakeNotificadoryLector notificador = new Tests.ejercicio2.FakeNotificadoryLector();
         Saludar saludar = new Saludar(notificador, notificador);
         saludar.enviar();
         assertEquals(2 ,notificador.CantNotificaciones());
@@ -26,7 +26,7 @@ public class TestSaludar {
     public void testSaludarConMailtrap(){
         EmailSender emailsender = new EmailSender( "sandbox.smtp.mailtrap.io", 2525, "c9604509b9b552", "****db2f");
         Email notificador = new Email(emailsender);
-        FakeNotificadoryLector lector = new FakeNotificadoryLector();
+        Tests.ejercicio2.FakeNotificadoryLector lector = new Tests.ejercicio2.FakeNotificadoryLector();
         Saludar saludar = new Saludar(lector, notificador);
         saludar.enviar();
     }

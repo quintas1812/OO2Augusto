@@ -1,4 +1,4 @@
-package ejercicio6;
+package main.ejercicio6;
 
 public class Pedido {
 

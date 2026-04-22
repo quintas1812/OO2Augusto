@@ -1,6 +1,4 @@
-package ejercicio3;
-
-import java.util.List;
+package main.ejercicio3;
 
 public class EjemploDeUsoDelReporte {
     public static void main(String[] args) {

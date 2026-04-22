@@ -1,4 +1,4 @@
-package ejercicio5;
+package main.ejercicio5;
 
 public class Comedia extends Tipo {
     private final static int MONTO_INICIAL = 30000;

@@ -1,4 +1,4 @@
-package ejercicio3;
+package main.ejercicio3;
 
 public class Cena extends TipoDeGasto{
     public static final String CENA = "Cena";

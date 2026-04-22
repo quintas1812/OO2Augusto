@@ -1,14 +1,10 @@
-package ejercicio2;
+package main.ejercicio2;
 
-import com.opencsv.CSVReader;
-
-import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Predicate;
 
 public class Recaudacion {
 private LectorFile lector;

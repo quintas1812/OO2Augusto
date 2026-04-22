@@ -1,4 +1,4 @@
-package Tests.ejercicio1;
+package ejercicio1;
 
 import Modelo.ejercicio1.GuardaParticipante;
 import Modelo.ejercicio1.Participante;
@@ -11,7 +11,7 @@ public class TestGuardaParticipane {
 
     @Test
     public void testGuardarParticipante() throws Exception {
-        FakeGuardar fakeGuardar = new FakeGuardar();
+        Tests.ejercicio1.FakeGuardar fakeGuardar = new Tests.ejercicio1.FakeGuardar();
         Participante participante = new Participante("Juan Perez", "1234-567890", "China");
         GuardaParticipante guardaParticipante = new GuardaParticipante(fakeGuardar);
         guardaParticipante.guardar(participante);

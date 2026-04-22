@@ -1,4 +1,4 @@
-package ejercicio5;
+package main.ejercicio5;
 
 public record Actuacion(String nombreEvento, int numberoEspectadores) {
 }

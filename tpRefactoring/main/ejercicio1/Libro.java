@@ -1,4 +1,4 @@
-package ejercicio1;
+package main.ejercicio1;
 
 public abstract class Libro {
   //  public static final int INFANTILES = 2;
