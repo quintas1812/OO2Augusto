@@ -24,7 +24,11 @@ public class TestSaludar {
     }
     @Test
     public void testSaludarConMailtrap(){
-        EmailSender emailsender = new EmailSender( "sandbox.smtp.mailtrap.io", 2525, "c9604509b9b552", "****db2f");
+        String host = "sandbox.smtp.mailtrap.io";
+        int port = 2525;
+        String user = "c9604509b9b552";
+        String password = "ceea89428edb2f";
+        EmailSender emailsender = new EmailSender( host , port, user, password);
         Email notificador = new Email(emailsender);
         Tests.ejercicio2.FakeNotificadoryLector lector = new Tests.ejercicio2.FakeNotificadoryLector();
         Saludar saludar = new Saludar(lector, notificador);

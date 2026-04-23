@@ -1,4 +1,4 @@
-package main.ejercicio3;
+package ejercicio3;
 
 public class Gasto {
     TipoDeGasto tipoGasto;

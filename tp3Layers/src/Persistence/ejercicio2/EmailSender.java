@@ -18,16 +18,17 @@ public class EmailSender {
         this.username = username;
         this.password = password;
     }
-    public void enviarEmail(String destinatario, String asunto ) {
-        // Configuración de propiedades para Mailtrap
+
+    public void enviarEmail(String destinatario, String asunto) {
+        // Configuración simplificada y robusta para Mailtrap
         Properties prop = new Properties();
         prop.put("mail.smtp.auth", "true");
-        prop.put("mail.smtp.starttls.enable", "true");
+        prop.put("mail.smtp.starttls.enable", "true"); // Mailtrap requiere STARTTLS
         prop.put("mail.smtp.host", this.host);
         prop.put("mail.smtp.port", String.valueOf(this.port));
-        prop.put("mail.smtp.ssl.trust", this.host);
+        prop.put("mail.smtp.ssl.protocols", "TLSv1.2"); // Forzamos protocolo seguro
 
-        // Crear la sesión con autenticación usando jakarta.mail.Authenticator
+        // Crear la sesión con autenticación
         Session session = Session.getInstance(prop, new Authenticator() {
             @Override
             protected PasswordAuthentication getPasswordAuthentication() {
@@ -36,17 +37,17 @@ public class EmailSender {
         });
 
         try {
-            // Crear el mensaje
             Message message = new MimeMessage(session);
             message.setFrom(new InternetAddress("ConcursoLic_Sistemas@gmail.com"));
             message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(destinatario));
             message.setSubject(asunto);
             message.setText(CUERPO);
 
-            // Enviar usando el Transport de jakarta.mail
             Transport.send(message);
 
         } catch (MessagingException e) {
+            // Imprimimos la causa real para debuguear mejor
+            e.printStackTrace();
             throw new RuntimeException("❌ Error al enviar el email a " + destinatario, e);
         }
     }

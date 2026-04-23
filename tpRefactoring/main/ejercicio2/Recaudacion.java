@@ -1,4 +1,4 @@
-package main.ejercicio2;
+package ejercicio2;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -7,47 +7,63 @@ import java.util.List;
 import java.util.Map;
 
 public class Recaudacion {
-private LectorFile lector;
+    private static final int COL_PERMALINK = 0;
+    private static final int COL_COMPANY_NAME = 1;
+    private static final int COL_NUMBER_EMPLOYEES = 2;
+    private static final int COL_CATEGORY = 3;
+    private static final int COL_CITY = 4;
+    private static final int COL_STATE = 5;
+    private static final int COL_FUNDED_DATE = 6;
+    private static final int COL_RAISED_AMOUNT = 7;
+    private static final int COL_RAISED_CURRENCY = 8;
+    private static final int COL_ROUND = 9;
+    public static final String COMPANY_NAME = "company_name";
+    public static final String CITY = "city";
+    public static final String STATE = "state";
+    public static final String ROUND = "round";
+    public static final String NUMBER_EMPLOYEES = "number_employees";
+    public static final String CATEGORY = "category";
+    public static final String FUNDED_DATE = "funded_date";
+    public static final String RAISED_AMOUNT = "raised_amount";
+    public static final String RAISED_CURRENCY = "raised_currency";
+    public static final String PERMALINK = "permalink";
 
-Recaudacion(LectorFile lector) {
-    this.lector = lector;
+    private LectorCSV lector;
+private List<String[]> csvData;
+public Recaudacion(LectorCSV lector) {
+     csvData = lector.read();
 }
     public List<Map<String, String>> where(Map<String, String> options)
             throws IOException {
+        filtrar(options, COMPANY_NAME,1);
+        filtrar(options, CITY,4);
+        filtrar(options, STATE,5);
+        filtrar(options, ROUND,9);
+        return getResult();
+    }
 
-        List<String[]> csvData = lector.read();
-
-        csvData = buscar(options, "company_name", csvData, 1);
-
-        csvData = buscar(options, "city", csvData, 4);
-
-        csvData = buscar(options, "state", csvData, 5);
-
-        csvData = buscar(options, "round", csvData, 9);
-
+    private List<Map<String, String>> getResult() {
         List<Map<String, String>> output = new ArrayList<Map<String, String>>();
-
-        for (int i = 0; i < csvData.size(); i++) {
+        for (String[] row : csvData) {
             Map<String, String> mapped = new HashMap<String, String>();
-            mapped.put("permalink", csvData.get(i)[0]);
-            mapped.put("company_name", csvData.get(i)[1]);
-            mapped.put("number_employees", csvData.get(i)[2]);
-            mapped.put("category", csvData.get(i)[3]);
-            mapped.put("city", csvData.get(i)[4]);
-            mapped.put("state", csvData.get(i)[5]);
-            mapped.put("funded_date", csvData.get(i)[6]);
-            mapped.put("raised_amount", csvData.get(i)[7]);
-            mapped.put("raised_currency", csvData.get(i)[8]);
-            mapped.put("round", csvData.get(i)[9]);
+            mapped.put(PERMALINK, row[COL_PERMALINK]);
+            mapped.put(COMPANY_NAME, row[COL_COMPANY_NAME]);
+            mapped.put(NUMBER_EMPLOYEES, row[COL_NUMBER_EMPLOYEES]);
+            mapped.put(CATEGORY, row[COL_CATEGORY]);
+            mapped.put(CITY, row[COL_CITY]);
+            mapped.put(STATE, row[COL_STATE]);
+            mapped.put(FUNDED_DATE, row[COL_FUNDED_DATE]);
+            mapped.put(RAISED_AMOUNT, row[COL_RAISED_AMOUNT]);
+            mapped.put(RAISED_CURRENCY, row[COL_RAISED_CURRENCY]);
+            mapped.put(ROUND, row[COL_ROUND]);
             output.add(mapped);
         }
         return output;
     }
-
-    private static List<String[]> buscar(Map<String, String> options, String columna, List<String[]> csvData, int x) {
+    private List<String[]> filtrar(Map<String, String> options, String columna, int x) {
         if (options.containsKey(columna)) {
             List<String[]> results = new ArrayList<String[]>();
-            for (String[] csvDatum : csvData) {
+            for (String[] csvDatum : this.csvData) {
                 if (csvDatum[x].equals(options.get(columna))) {
                     results.add(csvDatum);
                 }

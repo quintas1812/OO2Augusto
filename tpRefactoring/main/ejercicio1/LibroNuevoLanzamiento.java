@@ -1,4 +1,4 @@
-package main.ejercicio1;
+package ejercicio1;
 
 public class LibroNuevoLanzamiento  extends Libro {
     private final double PRECIOSINDECUENTO=3 ;

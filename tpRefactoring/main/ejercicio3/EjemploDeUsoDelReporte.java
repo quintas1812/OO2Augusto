@@ -1,4 +1,4 @@
-package main.ejercicio3;
+package ejercicio3;
 
 public class EjemploDeUsoDelReporte {
     public static void main(String[] args) {

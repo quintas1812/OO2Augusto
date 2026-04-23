@@ -10,6 +10,6 @@ public class Email implements Notificador {
 
     @Override
     public void notificar(String usuario, String nombre) {
-        emailSender.enviarEmail(usuario,"Feliz cumpleaños nombre: "+nombre+"!!!");
+        emailSender.enviarEmail(usuario,"Feliz cumpleaños: "+nombre+"!!!");
     }
 }
