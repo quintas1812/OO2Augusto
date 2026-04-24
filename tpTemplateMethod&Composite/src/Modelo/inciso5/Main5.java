@@ -1,8 +1,4 @@
-package Main.inciso5;
-
-import Modelo.inciso5.Remera;
-import Modelo.inciso5.RemeraImportada;
-import Modelo.inciso5.RemeraNacional;
+package Modelo.inciso5;
 
 public class Main5 {
     static void main (String[] args){

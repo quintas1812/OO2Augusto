@@ -2,7 +2,7 @@ package Modelo.inciso4;
 
 import static java.time.LocalDate.now;
 import static java.time.Month.of;
-
+// template method
 public abstract class Calculador {
     private int mesEnPromocion;
     //private LogTransaction log;

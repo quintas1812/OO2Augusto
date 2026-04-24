@@ -1,5 +1,5 @@
-package Main.inciso1;
-import Modelo.inciso1.*;
+package Modelo.inciso1;
+
 public class EjemploMain {
     public static void main(String[] args){
         Director director = new Director("augusto", 110);
