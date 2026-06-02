@@ -8,8 +8,8 @@ import javax.swing.SwingUtilities;
 
 public class Main {
 
-    public static final String PATH_INSCRIPTOS = "C:/Users/augus_r4ret8/OneDrive/Desktop/proyectogithub/tp3Layers/src/inscriptos.txt";
-    public static final String PATH_CONCURSOS = "C:/Users/augus_r4ret8/OneDrive/Desktop/proyectogithub/tp3Layers/src/concursos.txt";
+    public static final String PATH_INSCRIPTOS = "C:\\Users\\augus_r4ret8\\IdeaProjects\\OO2Augusto\\tp3Layers\\src\\inscriptos.txt";
+    public static final String PATH_CONCURSOS = "C:\\Users\\augus_r4ret8\\IdeaProjects\\OO2Augusto\\tp3Layers\\src\\concursos.txt";
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(new Runnable() {

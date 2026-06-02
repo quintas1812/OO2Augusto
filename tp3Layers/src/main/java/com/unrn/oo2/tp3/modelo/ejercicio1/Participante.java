@@ -4,8 +4,13 @@ public class Participante {
     private String nombre;
     private String telefono;
     private String region;
-    public Participante(String nombre, String telefono, String region) throws Exception {
+    private String email;
+    public Participante(String nombre, String telefono, String region,
+                        String email) throws Exception {
        validarNombre(nombre);
+       if (!email.contains("@")){
+           throw new Exception("El email debe contener el símbolo @");}
+        this.email = email;
        if (!validarTelefono(telefono)) {
            throw new Exception("El teléfono debe ingresarse de la siguiente forma: NNNN-NNNNNN");
        }
@@ -31,4 +36,8 @@ public class Participante {
     public String Nombre() { return nombre; }
     public String Telefono() { return telefono; }
     public String Region() { return region; }
+
+    public String email() {
+        return this.email;
+    }
 }

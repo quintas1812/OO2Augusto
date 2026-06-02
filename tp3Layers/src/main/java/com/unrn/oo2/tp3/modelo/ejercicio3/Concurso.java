@@ -1,6 +1,7 @@
 package com.unrn.oo2.tp3.modelo.ejercicio3;
 
 import com.unrn.oo2.tp3.persistence.ejercicio3.SaveBD;
+import com.unrn.oo2.tp3.modelo.ejercicio3.LogMethod; // Importación de la anotación LogMethod
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -14,10 +15,14 @@ public class Concurso {
     private LocalDate fechaFin;
     private ArrayList<Participante> participantes = new ArrayList<Participante>();
     private Lector lector;
+
+    @LogMethod
     public List<String> todosLosConcursos(Lector lector) {
         List<String> abiertos =lector.read();
         return abiertos;
     }
+
+    @LogMethod
     public void saveInscription(Participante participante, int idCurso, Save save) {//guarda en bd y file
         participantes.add(participante);
         StringBuilder sb = new StringBuilder();
@@ -29,7 +34,11 @@ public class Concurso {
                 .append(System.lineSeparator());
         String datos = sb.toString();
         save.inscribir(datos);//aca se guarda en el archivo
-        new SaveBD().inscribir(datos); //aca guarda en la base de datos
+      //  new SaveBD().inscribir(datos); //aca guarda en la base de datos
     }
 
+    @Override
+    public String toString() {
+        return  nombre ;
+    }
 }

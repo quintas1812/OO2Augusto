@@ -1,0 +1,8 @@
+"todosLosConcursos", "sin parámetros", "2026/06/02 18:41:45"
+"saveInscription", "Q|u", "2026/06/02 18:42:07"
+"todosLosConcursos", "sin parámetros", "2026/06/02 18:42:34"
+"saveInscription", "a||", "2026/06/02 18:42:46"
+"todosLosConcursos", "[Ljava.lang.Object;@73d6f43e", "2026/06/02 18:54:09"
+"saveInscription", "[Ljava.lang.Object;@3b8db7a", "2026/06/02 18:54:37"
+"todosLosConcursos", "sin parámetros", "2026/06/02 18:55:38"
+"saveInscription", "Messi|1", "2026/06/02 18:56:05"

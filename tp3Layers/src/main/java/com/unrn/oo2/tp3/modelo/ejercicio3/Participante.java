@@ -54,6 +54,9 @@ public class Participante {
         return this.email;
     }
 
-
+    @Override
+    public String toString() {
+        return  apellido;
+    }
 }
 

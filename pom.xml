@@ -10,16 +10,17 @@
     <packaging>pom</packaging>
 
     <properties>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
     <modules>
-        <module>tp1</module>
+        <module>tp1y2</module>
         <module>tp3Layers</module>
         <module>tpRefactoring</module>
-        <module>tpTemplateMethod&amp;Composite</module> <!-- Corregido: & por &amp; -->
+        <module>tpTemplateMethod_Composite</module> <!-- Corregido: & por &amp; -->
+        <module>tpObservers</module>
     </modules>
 
     <dependencies>
