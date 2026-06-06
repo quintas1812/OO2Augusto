@@ -24,16 +24,19 @@ public class Inicial implements EstadoCalculadora {
 
     @Override
     public void dividir() {
-
+        this.calculadora.cambiarEstado(new EsperandoOperando(this.calculadora));
     }
 
     @Override
     public void por() {
+        this.calculadora.cambiarEstado(new EsperandoOperando(this.calculadora));
     }
 
     @Override
     public void menos() {
+        this.calculadora.cambiarEstado(new EsperandoOperando(this.calculadora));
     }
+
 
     @Override
     public String toString() {

@@ -3,33 +3,40 @@ package com.unrn.double_dispatch.ejercicio5;
 import java.time.LocalDate;
 
 public abstract class Articulo {
-    protected String nombre;
-    protected int dias;
-    protected LocalDate fechaPrestacion;
-    protected LocalDate fechaDevolucion;
-    protected float precio;
+    private String nombre;
+    private int dias;
+    private LocalDate fechaPrestacion;
+    private LocalDate fechaDevolucion;
+    private float precioBase;
     protected Condicion condicion;
-    protected boolean disponible;
+    private boolean disponible;
+    private float precioAlquilado;
+
 
     public Articulo(Condicion condicion, float precio) {
         this.condicion = condicion;
-        this.precio = precio;//precio inicial
+        this.precioBase = precio;//precio base
+        this.disponible = true;
     }
     public void PrestarArticulo(String nombre) {
+        if (!this.disponible) {
+            throw new RuntimeException("el articulo no se encuentra disponible para ser prestado");
+        }
         this.nombre = nombre;
         this.fechaPrestacion = LocalDate.now();
         this.dias = calcularDiasDePrestacion();
         this.fechaDevolucion = this.fechaPrestacion.plusDays(dias);
-        // por lo que entendi de la consigna el precio se calcula segun los dias que se va a alquilar el articulo, por lo tanto se llama al metodo precio con los dias calculados
-        this.precio= precio(dias);
-
+        this.precioAlquilado= this.precioBase * this.dias;
         this.disponible = false;
     }
-
     protected abstract int calcularDiasDePrestacion();
 
-    public abstract float precio(int dias);
-
+    public LocalDate verFechaDevolucion() {
+        if (this.fechaDevolucion == null) {
+            throw new RuntimeException("el articulo no se encuentra prestado");
+        }
+        return this.fechaDevolucion;
+    }
 }
 /*Implementar un sistema de biblioteca/multimedia para gestionar préstamos de
 artículos. El sistema debe calcular la duración del préstamo según:

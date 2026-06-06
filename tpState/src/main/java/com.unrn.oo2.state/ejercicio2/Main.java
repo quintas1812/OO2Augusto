@@ -1,7 +1,7 @@
 package com.unrn.oo2.state.ejercicio2;
 
 public class Main {
-    static void main() {
+    public static void main(String[] args) {
         Calculadora calculadora = new Calculadora();
 
         System.out.println("Estado inicial: " + calculadora.estado());
@@ -10,13 +10,13 @@ public class Main {
 
         System.out.println("Estado después de ingresar operando: " + calculadora.estado());
 
-        calculadora.mas();
-        calculadora.mas();
-        calculadora.borrar();
+        calculadora.por();
+        calculadora.por();
+        calculadora.valor(10);
+
 
         System.out.println("Estado después de ingresar operando cero: " + calculadora.estado());
 
-        calculadora.valor(10);
 
         calculadora.mostrar();
     }

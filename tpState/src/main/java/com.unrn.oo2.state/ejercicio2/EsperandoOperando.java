@@ -15,26 +15,28 @@ public class EsperandoOperando implements EstadoCalculadora {
     public void mostrar() {
         this.calculadora.cambiarEstado(new Error(this.calculadora));
     }
-
     @Override
     public void valor(double valor) {
-        this.calculadora.cambiarValor(this.calculadora.valorAcumulado() + valor);
+        if ( this.calculadora.ultimaOperacion() == null) {
+            this.calculadora.cambiarEstado(new  Error( this.calculadora));
+        }
+        this.calculadora.ultimaOperacion().operar(this.calculadora, valor);
         this.calculadora.cambiarEstado(new Inicial(this.calculadora));
     }
 
     @Override
     public void dividir() {
-
+        this.calculadora.cambiarEstado(new Error(this.calculadora));
     }
 
     @Override
     public void por() {
-
+        this.calculadora.cambiarEstado(new Error(this.calculadora));
     }
 
     @Override
     public void menos() {
-
+        this.calculadora.cambiarEstado(new Error(this.calculadora));
     }
     @Override
     public String toString() {

@@ -1,10 +1,13 @@
 package com.unrn.oo2.state.ejercicio2;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Calculadora {
     static final double VALOR_INICIAL = 0.0;
     static final String MSG_ESTADO_ERROR = "La calculadora está en estado de error";
     private double valorAcumulado;
     private EstadoCalculadora estado;
+    Operacion operacion ;
 
     public Calculadora() {
         this.estado = new Inicial(this);
@@ -16,7 +19,9 @@ public class Calculadora {
     }
 
     public void mas() {
+        operacion = new Sumar();
         this.estado.mas();
+
 //        if (estado == EstadoCalculadora.INICIAL) {
 //            this.estado = EstadoCalculadora.ESPERANDO_OPERANDO;
 //        } else if (estado == EstadoCalculadora.ESPERANDO_OPERANDO) {
@@ -25,7 +30,21 @@ public class Calculadora {
 //            System.out.println(MSG_ESTADO_ERROR);
 //        }
     }
-
+    public void menos() {
+        operacion = new Restar();
+        this.estado.menos();
+    }
+    public void por() {
+        operacion = new Multiplicar();
+        this.estado.por();
+    }
+    public void dividido(){
+        operacion = new Dividir();
+        this.estado.dividir();
+    }
+    public Operacion ultimaOperacion() {
+        return operacion;
+    }
     public void borrar() { // el borrar no lo puse en la interface porque realiza el mismo comportamiento sin importar el estado en el que se encuentre
         this.estado = new Inicial(this);
         this.valorAcumulado = VALOR_INICIAL;
