@@ -9,11 +9,11 @@ public class ConRocklets extends TortaDecorator {
 
     @Override
     public String descripcion() {
-        return this.producto.descripcion() + " con rocklets";
+        return super.descripcion() + " con rocklets";
     }
 
     @Override
     public float precio() {
-        return this.producto.precio() + PRECIO_ROCKLETS;
+        return super.precio() + PRECIO_ROCKLETS;
     }
 }

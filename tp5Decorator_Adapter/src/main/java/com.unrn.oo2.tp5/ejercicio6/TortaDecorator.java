@@ -1,7 +1,7 @@
 package com.unrn.oo2.tp5.ejercicio6;
 
-public class TortaDecorator implements Producto {
-    Producto producto;
+public abstract class TortaDecorator implements Producto {
+    private Producto producto;
     public TortaDecorator(Producto producto) {
         this.producto = producto;
     }

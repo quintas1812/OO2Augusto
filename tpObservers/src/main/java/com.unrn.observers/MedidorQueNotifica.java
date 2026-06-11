@@ -11,7 +11,7 @@ public class MedidorQueNotifica extends Observado implements Termometro {
     }
     @Override
     public String temperatura () {
-        String tempConsultada = super.termometro.temperatura(); // esta es la temperatura de la clase base
+        String tempConsultada = super.temperatura(); // esta es la temperatura de la clase base
         super.notificar(tempConsultada);// le notificamos a las clases observadoras
         return tempConsultada;//
     }

@@ -12,5 +12,6 @@ public abstract class CalculadorDePrecios {
         }
         return total;
     }
+
     public abstract void calcular(double precio);
 }

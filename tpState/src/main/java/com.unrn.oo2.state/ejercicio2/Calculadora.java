@@ -13,7 +13,6 @@ public class Calculadora {
         this.estado = new Inicial(this);
         this.valorAcumulado = VALOR_INICIAL;
     }
-
     String estado() {
         return this.estado.toString();
     }

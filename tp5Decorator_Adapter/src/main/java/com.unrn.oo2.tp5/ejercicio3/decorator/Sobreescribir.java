@@ -9,6 +9,6 @@ public class Sobreescribir extends DecoratorReporte  {
     @Override
     public void export(File file, String contenido) {
        file.delete(); // lo elimino entonces el reporte crea uno nuevo
-       super.exportFile.export(file, contenido);
+       super.export(file, contenido);
     }
 }

@@ -10,6 +10,6 @@ public class AgregarFirmaAlFinal extends DecoratorReporte {
     @Override
     public void export(File file, String contenido) {
         String firma = contenido + "\n Archivo firmado.";
-        super.exportFile.export(file, firma); // sobre escribe el contenido y delega el contenido al exportador original, pero con la firma agregada al final
+        super.export(file, firma); // sobre escribe el contenido y delega el contenido al exportador original, pero con la firma agregada al final
     }
 }

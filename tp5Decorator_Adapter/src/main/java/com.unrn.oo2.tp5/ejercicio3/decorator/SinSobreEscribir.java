@@ -12,7 +12,7 @@ public class SinSobreEscribir extends DecoratorReporte {
         if (file.exists()) {
           throw new RuntimeException("el archivo ya existe");
         }
-        super.exportFile.export(file, contenido);
+        super.export(file, contenido);
     }
 }
 

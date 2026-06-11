@@ -5,7 +5,7 @@ public class Medidor  implements Termometro {
     private ClimaOnline clima;
 
     public Medidor(ClimaOnline clima) {
-        this.clima = clima;
+        this.clima = new ProxyClimaOnline(clima);// el clima online que me llegue lo pongo en el proxy
     }
 
     @Override

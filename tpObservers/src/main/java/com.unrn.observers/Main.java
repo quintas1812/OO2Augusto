@@ -8,5 +8,6 @@ public class Main {
         Termometro medidor = new Medidor(clima);
         Termometro decoradorQueNotifica= new MedidorQueNotifica(medidor,List.of(new SaveFile(), new Consola()));
         decoradorQueNotifica.temperatura();
+        decoradorQueNotifica.temperatura();
     }
 }

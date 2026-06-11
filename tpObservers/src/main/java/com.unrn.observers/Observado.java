@@ -4,7 +4,7 @@ import java.util.List;
 //esta clase funciona como clase abstracta de decorador y observado
 public abstract class Observado  implements Termometro  {
     private List<Observer> observers;
-    protected Termometro termometro;
+    private Termometro termometro;
      public Observado(List<Observer> observers, Termometro termometro) {
         this.observers = observers;
         this.termometro = termometro;

@@ -1,0 +1,17 @@
+package com.unrn.oo2.tp2.ejercicio2.tarjetas;
+
+public class Visa implements TarjetaCredito {
+    private final double DESCUENTO = 0.97;// descuento del %3
+    @Override
+    public double aplicarDescuentoBebida( ) {
+        return DESCUENTO;
+    }
+    @Override
+    public double aplicarDescuentoPlato( ) {
+        return 1;//para los platos con esta tarjeta no hay descuento
+    }
+    @Override
+    public String toString() {
+        return "Visa";
+    }
+}
